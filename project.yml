@@ -1,0 +1,48 @@
+name: ForeignLanguageReader
+options:
+  bundleIdPrefix: com.nateinaction
+  deploymentTarget:
+    iOS: "26.0"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+
+targets:
+  ForeignLanguageReader:
+    type: application
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: ForeignLanguageReader
+    settings:
+      base:
+        INFOPLIST_FILE: ForeignLanguageReader/App/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.nateinaction.ForeignLanguageReader
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: false
+    info:
+      path: ForeignLanguageReader/App/Info.plist
+      properties:
+        UILaunchScreen: {}
+  ForeignLanguageReaderTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "26.0"
+    sources:
+      - path: ForeignLanguageReaderTests
+    dependencies:
+      - target: ForeignLanguageReader
+
+schemes:
+  ForeignLanguageReader:
+    build:
+      targets:
+        ForeignLanguageReader: all
+    test:
+      targets:
+        - ForeignLanguageReaderTests
+    run:
+      config: Debug

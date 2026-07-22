@@ -21,11 +21,15 @@ per-feature plans, and [`TODO.md`](TODO.md) for the ordered next steps.
 
 ## Building
 
-_Project scaffolding is not yet in place — see `TODO.md`. Once scaffolded:_
+The `.xcodeproj` is generated from `project.yml` via [XcodeGen](https://github.com/yonaskolb/XcodeGen) and is not committed. On a Mac with Xcode 26+:
 
-1. Open `ForeignLanguageReader.xcodeproj` in Xcode.
-2. Select an iOS 26 Simulator or a supported device.
-3. Build & run (⌘R).
+1. Enter the dev shell (`direnv allow`, or `nix develop`) — provides `xcodegen`, `swiftformat`, `swiftlint`.
+2. Run `xcodegen generate`.
+3. Open `ForeignLanguageReader.xcodeproj` in Xcode.
+4. Select an iOS 26 Simulator or a supported device.
+5. Build & run (⌘R).
+
+A sample Spanish-language PDF for testing the reader is at `SampleFiles/el-principito-sample.pdf`.
 
 ## Tech stack
 

@@ -4,11 +4,11 @@ Ordered next steps. Feature 5 (color inversion) is deliberately front-loaded
 because it carries the most rendering risk.
 
 ## Scaffolding
-- [ ] Scaffold Xcode project (iOS 26 target, SwiftUI app lifecycle, SwiftData)
-- [ ] Decide project generation approach: raw `.xcodeproj` vs. `Package.swift` + XcodeGen
-- [ ] Set up folder groups: `App/`, `Reader/`, `Translation/`, `Vocabulary/`, `Export/`, `Rendering/`, `Shared/`
-- [ ] Add a sample foreign-language PDF for testing
-- [ ] `flake.nix` + `.envrc` for any tooling (swiftformat/swiftlint) per repo convention
+- [x] Decide project generation approach: raw `.xcodeproj` vs. `Package.swift` + XcodeGen → **XcodeGen** (`project.yml`, `.xcodeproj` gitignored/generated)
+- [x] Set up folder groups: `App/`, `Reader/`, `Translation/`, `Vocabulary/`, `Export/`, `Rendering/`, `Shared/`
+- [x] Add a sample foreign-language PDF for testing (`SampleFiles/el-principito-sample.pdf`)
+- [x] `flake.nix` + `.envrc` for any tooling (swiftformat/swiftlint/xcodegen) per repo convention
+- [ ] Scaffold Xcode project (run `xcodegen generate` on a Mac; SwiftData container wiring lands with plan 03)
 
 ## Feature 1 — PDF Reader
 - [ ] `PDFKitView: UIViewRepresentable` wrapping `PDFView`
